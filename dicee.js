@@ -13,7 +13,13 @@ window.onload = function refFunc() {
   dice2.src = "images/" + dicee[dice2Index].toString();
 
   if (reloading) {
-    title.innerHTML = "Refresheddddd";
+    if (dice1Index < dice2Index) {
+      title.innerHTML = "Player 2 Wins!🚩";
+    } else if (dice2Index < dice1Index) {
+      title.innerHTML = "🚩Player 1 Wins!";
+    } else {
+      title.innerHTML = "🚩Draw!🚩";
+    }
   }
 
   sessionStorage.setItem("reloading", "true");
